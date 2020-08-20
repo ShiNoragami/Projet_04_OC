@@ -20,17 +20,20 @@ import com.sn.maru.Repository.MeetingRepository;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AddMeetFragment extends Fragment {
+public class AddMeetFragment extends Fragment implements View.OnClickListener,
+        DialogTimePikerFragment.DialogTimePickerListener,
+        DialogContributorSelectorFragment.DialogContributorListener,
+        DialogDatePickerFragment.DialogDatePickerListener {
 
     @BindView(R.id.add_nameLyt)
     TextInputLayout nameInput;
-    @BindView(R.id.add_roomLyt)
+    @BindView(R.id.)
     TextInputLayout roomInput;
-    @BindView(R.id.time_txt)
+    @BindView(R.id.time_btn)
     Button timeInput;
-    @BindView(R.id.date_txt)
+    @BindView(R.id.date_btn)
     Button dateInput;
-    @BindView(R.id.add_mailLyt)
+    @BindView(R.id.)
     TextInputLayout mailInput;
     @BindView(R.id.add_save)
     MaterialButton save;
@@ -41,7 +44,7 @@ public class AddMeetFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_add_meet, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_meet, container, false);
         ButterKnife.bind(this, view);
         //LIE AU REPOSITORY TO DO
         return view;

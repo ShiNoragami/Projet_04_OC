@@ -7,7 +7,9 @@ import com.sn.maru.Service.MeetingApiService;
  * Dependency injector to get instance of services
  */
 public class DI {
+
     public static MeetingRepository createMeetingRepository() {
-        //a creer
+        return new MeetingRepository(new MeetingApiService());
+    }
 }
 

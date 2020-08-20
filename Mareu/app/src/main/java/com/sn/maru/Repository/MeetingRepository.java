@@ -31,5 +31,13 @@ public class MeetingRepository {
         List<Room> roomList = mMeetingApiService.getRooms();
         return roomList;
     }
+
+    public List<Meeting> filterByDate(String date) {
+        return mMeetingApiService.filterByDate(date);
+    }
+
+    public List<Meeting> filterByPlace(String place) {
+        return mMeetingApiService.filterByPlace(place);
+    }
 }
 

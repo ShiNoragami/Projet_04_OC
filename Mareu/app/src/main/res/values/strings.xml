@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Maréu</string>
     <string name="add_title">Programme la réunion</string>
+    <string name="contributor">Participants</string>
+    <string name="room">Numéro de Salle</string>
+    <string name="save">Save</string>
+    <string name="select_contributor">Selection Participants</string>
+    <string name="time">Heure</string>
+    <string name="date">Date</string>
 </resources>

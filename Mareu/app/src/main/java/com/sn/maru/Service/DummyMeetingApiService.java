@@ -3,6 +3,7 @@ package com.sn.maru.Service;
 import com.sn.maru.Model.Meeting;
 import com.sn.maru.Model.Room;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DummyMeetingApiService implements MeetingApiService {
@@ -28,5 +29,27 @@ public class DummyMeetingApiService implements MeetingApiService {
     @Override
     public List<Room> getRooms() {
         return this.mRoomList;
+    }
+
+    @Override
+    public List<Meeting> filterByDate(String date) {
+        List<Meeting> meetingListByDate = new ArrayList<>();
+        for (Meeting meeting : mMeetingList) {
+            if (meeting.getDateFormated().equals(date)) {
+                meetingListByDate.add(meeting);
+            }
+        }
+        return meetingListByDate;
+    }
+
+    @Override
+    public List<Meeting> filterByPlace(String place) {
+        List<Meeting> meetingListByPlace = new ArrayList<>();
+        for (Meeting meeting : mMeetingList) {
+            if (meeting.getRoom().toString() == place) {
+                meetingListByPlace.add(meeting);
+            }
+        }
+        return meetingListByPlace;
     }
 }

@@ -4,9 +4,9 @@ import androidx.annotation.NonNull;
 
 public class Room {
     private String name;
-    private String color;
+    private Integer color;
 
-    public Room(String name, String color) {
+    public Room(String name, Integer color) {
         this.name = name;
         this.color = color;
     }
@@ -15,8 +15,16 @@ public class Room {
         return name;
     }
 
-    public String getColor() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getColor() {
         return color;
+    }
+
+    public void setColor(Integer color) {
+        this.color = color;
     }
 
     @NonNull

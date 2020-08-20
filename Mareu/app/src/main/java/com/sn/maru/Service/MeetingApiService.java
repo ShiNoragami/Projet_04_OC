@@ -14,4 +14,8 @@ public interface MeetingApiService {
     void deleteMeeting(Meeting meeting);
 
     List<Room> getRooms();
+
+    List<Meeting> filterByDate(String date);
+
+    List<Meeting> filterByPlace(String place);
 }

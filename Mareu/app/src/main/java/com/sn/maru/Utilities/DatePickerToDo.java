@@ -29,7 +29,7 @@ public class DatePickerToDo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_meet);
+        setContentView(R.layout.fragment_add_meet);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
