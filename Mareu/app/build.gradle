@@ -12,9 +12,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
     }
-    testOptions {
-        execution 'ANDROID_TEST_ORCHESTRATOR'
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -25,8 +22,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        execution 'ANDROID_TEST_ORCHESTRATOR'
+    }
 }
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

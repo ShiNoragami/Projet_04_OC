@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/meetingItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/item_list_pastil"
+        android:layout_width="@dimen/pastil_width_land"
+        android:layout_height="@dimen/pastil_height_land"
+        android:layout_marginStart="@dimen/pastil_margin_start_land"
+        android:layout_marginTop="@dimen/pastil_margin_top_land"
+        android:layout_marginBottom="@dimen/pastil_margin_bottom_land"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_list_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_pastil_24dp" />
+
+    <TextView
+        android:id="@+id/item_list_title"
+        android:layout_width="@dimen/meeting_item_title_width_land"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/meeting_item_tilte_margin_start_land"
+        android:layout_marginTop="@dimen/meeting_item_title_margin_top_land"
+        android:layout_marginEnd="@dimen/meeting_item_title_margin_end_land"
+        android:fontFamily="sans-serif-black"
+        android:text="Réunion A - 14h00 - Peach"
+        android:textColor="#000000"
+        android:textSize="@dimen/meeting_item_title_text_size_land"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/item_mail_list"
+        app:layout_constraintEnd_toStartOf="@+id/delete_item_iv"
+        app:layout_constraintStart_toEndOf="@+id/item_list_pastil"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_mail_list"
+        android:layout_width="@dimen/item_mail_list_width_land"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_mail_list_margin_start_land"
+        android:layout_marginEnd="@dimen/item_mail_list_margin_end_land"
+        android:singleLine="true"
+        android:text="mario@gmail.com , peach@mailer.com"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/list_meeting_text_size_land"
+        app:layout_constraintEnd_toStartOf="@+id/delete_item_iv"
+        app:layout_constraintStart_toEndOf="@id/item_list_pastil"
+        app:layout_constraintTop_toBottomOf="@id/item_list_title" />
+
+    <ImageView
+        android:id="@+id/delete_item_iv"
+        android:layout_width="@dimen/delete_item_iv_width_land"
+        android:layout_height="@dimen/delete_item_iv_height_land"
+        android:layout_marginTop="@dimen/delete_item_iv_margin_top_land"
+        android:layout_marginEnd="@dimen/delete_item_iv_margin_end_land"
+        android:layout_marginBottom="@dimen/delete_item_iv_margin_bottom_land"
+        android:src="@drawable/ic_delete_white_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_list_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

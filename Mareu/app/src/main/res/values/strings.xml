@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">Maréu</string>
-    <string name="add_title">Programme la réunion</string>
+    <string name="add_title">Nouvelle réunion</string>
     <string name="contributor">Participants</string>
     <string name="room">Numéro de Salle</string>
     <string name="save">Save</string>
-    <string name="select_contributor">Selection Participants</string>
+    <string name="select_contributor">Ajouter des Participants</string>
     <string name="time">Heure</string>
     <string name="date">Date</string>
+    <string name="addMeetingTitle">Créer Une Réunion</string>
+
+    <string name="infoAddSubjectToMeeting">Vous devez renseigner le sujet de la réunion</string>
+    <string name="infoAddDateTimeToMeeting">Vous devez renseigner la date et l\'heure de la réunion</string>
+    <string name="infoMeetingRoom">La salle choisi n\'est pas disponible à cette heure</string>
+    <string name="contributorAddWithSuccess">Participant ajouté !</string>
+    <string name="mailNotValide">Adresse Email invalide</string>
+    <string name="choiceConfirmed">Choix validé !</string>
 </resources>

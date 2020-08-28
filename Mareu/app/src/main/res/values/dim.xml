@@ -6,4 +6,76 @@
     <dimen name="add_margin">16dp</dimen>
     <dimen name="text_size">20sp</dimen>
     <dimen name="title_size">24sp</dimen>
+
+    <!-- Pastil size-->
+    <dimen name="pastil_width">55dp</dimen>
+    <dimen name="pastil_height">55dp</dimen>
+    <dimen name="pastil_margin_start">16dp</dimen>
+    <dimen name="pastil_margin_top">16dp</dimen>
+    <dimen name="pastil_margin_bottom">8dp</dimen>
+
+    <!--Meeting item size and margin-->
+    <dimen name="meeting_item_title_width">248dp</dimen>
+    <dimen name="meeting_item_tilte_margin_start">8dp</dimen>
+    <dimen name="meeting_item_title_margin_top">20dp</dimen>
+    <dimen name="meeting_item_title_margin_end">8dp</dimen>
+    <dimen name="meeting_item_title_text_size">18sp</dimen>
+
+    <dimen name="item_mail_list_width">248dp</dimen>
+    <dimen name="item_mail_list_margin_start">8dp</dimen>
+    <dimen name="item_mail_list_margin_end">8dp</dimen>
+
+    <dimen name="delete_item_iv_width">26dp</dimen>
+    <dimen name="delete_item_iv_height">26dp</dimen>
+    <dimen name="delete_item_iv_margin_top">20dp</dimen>
+    <dimen name="delete_item_iv_margin_end">16dp</dimen>
+    <dimen name="delete_item_iv_margin_bottom">20dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_margin">15dp</dimen>
+    <dimen name="text_view_size">18sp</dimen>
+    <dimen name="text_view_padding">10dp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="margin_start_to_center_item">60dp</dimen>
+    <dimen name="margin_end_to_center_item">60dp</dimen>
+    <dimen name="list_meeting_text_size">14sp</dimen>
+    <dimen name="list_meeting_padding_size">5dp</dimen>
+
+    <!--**************************************************************************-->
+    <!--***************** LANDSCAPE **********************************************-->
+    <!--**************************************************************************-->
+
+    <!-- FragmentAddMeeting -->
+    <dimen name="divider_height_land">1dp</dimen>
+    <dimen name="divider_margin_land">15dp</dimen>
+    <dimen name="text_view_size_land">18sp</dimen>
+    <dimen name="text_view_padding_land">10dp</dimen>
+    <dimen name="button_text_size_land">14sp</dimen>
+    <dimen name="margin_start_to_center_item_land">60dp</dimen>
+    <dimen name="margin_end_to_center_item_land">60dp</dimen>
+    <dimen name="list_meeting_text_size_land">14sp</dimen>
+    <dimen name="list_meeting_padding_size_land">5dp</dimen>
+
+    <!-- Meeting Item RecyclerView -->
+    <dimen name="pastil_width_land">55dp</dimen>
+    <dimen name="pastil_height_land">55dp</dimen>
+    <dimen name="pastil_margin_start_land">16dp</dimen>
+    <dimen name="pastil_margin_top_land">16dp</dimen>
+    <dimen name="pastil_margin_bottom_land">8dp</dimen>
+
+    <dimen name="meeting_item_title_width_land">248dp</dimen>
+    <dimen name="meeting_item_tilte_margin_start_land">8dp</dimen>
+    <dimen name="meeting_item_title_margin_top_land">20dp</dimen>
+    <dimen name="meeting_item_title_margin_end_land">8dp</dimen>
+    <dimen name="meeting_item_title_text_size_land">18sp</dimen>
+
+    <dimen name="item_mail_list_width_land">248dp</dimen>
+    <dimen name="item_mail_list_margin_start_land">8dp</dimen>
+    <dimen name="item_mail_list_margin_end_land">8dp</dimen>
+
+    <dimen name="delete_item_iv_width_land">26dp</dimen>
+    <dimen name="delete_item_iv_height_land">26dp</dimen>
+    <dimen name="delete_item_iv_margin_top_land">20dp</dimen>
+    <dimen name="delete_item_iv_margin_end_land">16dp</dimen>
+    <dimen name="delete_item_iv_margin_bottom_land">20dp</dimen>
 </resources>

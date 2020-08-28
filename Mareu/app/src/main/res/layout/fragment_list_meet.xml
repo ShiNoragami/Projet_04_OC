@@ -10,6 +10,6 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.meeting_list.MeetFragment"
+    tools:context=".ui.meeting_list.mainactivity.MeetFragment"
     tools:listitem="@layout/fragment_meet"/>
 
