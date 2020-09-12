@@ -48,138 +48,46 @@ public class AddMeetInstrumentedTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
-   /* @Before
+    @Before
     public void setup() {
         mMeetingRepository = new MeetingRepository(new DummyMeetingApiService());
         ITEM_COUNT = mMeetingRepository.getMeetingsList().size();
-    }*/
+    }
 
     @Test
     public void addMeetingInstrumentedTest() {
 
         //click on button to add meeting
-        ViewInteraction floatingActionButton = onView(
-                allOf(withId(R.id.add_meeting_fab),
-                        childAtPosition(
-                                allOf(withId(R.id.activity_main),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                1),
-                        isDisplayed()));
-        floatingActionButton.perform(click());
+        onView(withId(R.id.add_meeting_fab)).perform(click());
 
         //add text in the editText for the meeting name
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.create_meeting_subject_et),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.create_meeting_fragment),
-                                        0),
-                                1)));
-        appCompatEditText.perform(scrollTo(), replaceText("Test"), closeSoftKeyboard());
+        onView(withId(R.id.create_meeting_subject_et)).perform(scrollTo(), replaceText("Test"), closeSoftKeyboard());
 
         //select the date of meeting in dialog
-        ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.date_selector_btn), withText("Selectioner la date"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        4),
-                                0)));
-        appCompatButton.perform(scrollTo(), click());
+        onView(withId(R.id.date_selector_btn)).perform(click());
 
         //validate the date selected
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(android.R.id.button1), withText("ok"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.ScrollView")),
-                                        0),
-                                3)));
-        appCompatButton2.perform(scrollTo(), click());
+        onView(withId(android.R.id.button1)).perform(scrollTo(),click());
 
         //select time of meeting
-        ViewInteraction appCompatButton3 = onView(
-                allOf(withId(R.id.time_selector_btn), withText("Selectioner l'heure"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        4),
-                                1)));
-        appCompatButton3.perform(scrollTo(), click());
+        onView(withId(R.id.time_selector_btn)).perform(click());
 
         //validate the time
-        ViewInteraction appCompatButton4 = onView(
-                allOf(withId(android.R.id.button1), withText("ok"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.ScrollView")),
-                                        0),
-                                3)));
-        appCompatButton4.perform(scrollTo(), click());
+        onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         //Open the dialog to add one email adress of contributor
-        ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.contributor_selector_btn), withText("Ajouter des participants"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.create_meeting_fragment),
-                                        0),
-                                10)));
-        appCompatButton5.perform(scrollTo(), click());
+        onView(withId(R.id.contributor_selector_btn)).perform(scrollTo(),click());
 
         //add the email adress in edit text
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.contributor_edit_txt),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.custom),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText2.perform(replaceText("peach@lamzon.com"), closeSoftKeyboard());
+        onView(withId(R.id.contributor_edit_txt)).perform(replaceText("peach@lamzon.com"), closeSoftKeyboard());
 
         //validate the choice
-        ViewInteraction appCompatButton6 = onView(
-                allOf(withId(android.R.id.button1), withText("Valider"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.ScrollView")),
-                                        0),
-                                3)));
-        appCompatButton6.perform(scrollTo(), click());
+        onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         //create the meeting on click on create button
-        ViewInteraction appCompatButton7 = onView(
-                allOf(withId(R.id.add_save), withText("Créer réunion"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        13),
-                                1)));
-        appCompatButton7.perform(scrollTo(), click());
+        onView(withId(R.id.add_save)).perform(scrollTo(),click());
 
         //check if the meeting is add in recycler view
         onView(ViewMatchers.withId(R.id.meeting_recycler_view)).check(withItemCount(1));
-    }
-
-    public static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
-
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
-
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
     }
 }

@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -45,19 +44,19 @@ public class AddMeetFragment extends Fragment
         DialogContributorSelectorFragment.DialogContributorListener,
         DialogDatePickerFragment.DialogDatePickerListener {
 
-    @BindView(R.id.add_name)
+    @BindView(R.id.create_meeting_subject_et)
     TextView mMeetingSubject;
-    @BindView(R.id.time_btn)
+    @BindView(R.id.time_selector_btn)
     Button mMeetingSelectTime;
-    @BindView(R.id.roomSpinner)
+    @BindView(R.id.roomSpinner_sp)
     Spinner mMeetingRoom;
-    @BindView(R.id.contributor_btn)
+    @BindView(R.id.contributor_selector_btn)
     Button mContributorSelector;
     @BindView(R.id.add_save)
     Button mCreateMeetingBtn;
     @BindView(R.id.list_contributor)
     TextView mContributorList;
-    @BindView(R.id.date_btn)
+    @BindView(R.id.date_selector_btn)
     Button mDateSelectorBtn;
 
     public MeetingRepository mMeetingRepository;
@@ -91,7 +90,7 @@ public class AddMeetFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_add_meet, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_meet, container, false);
         ButterKnife.bind(this, view);
         configureClickListener();
         return view;
