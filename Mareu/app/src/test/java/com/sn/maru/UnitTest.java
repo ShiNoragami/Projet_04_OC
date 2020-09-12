@@ -67,10 +67,11 @@ public class UnitTest {
         mMeetingRepository.addMeeting(m2);
         mMeetingRepository.addMeeting(m3);
 
-        List<Meeting> meetingList = mMeetingRepository.filterByPlace(placeFilter);
+        List<Meeting> meetingList = mMeetingRepository.getMeetingsList();
+        List<Meeting> meetingListFilter = mMeetingRepository.filterByPlace(placeFilter);
 
-        assertTrue(meetingList.size() == 2);
-        for (Meeting m : meetingList) {
+        assertEquals(3, meetingList.size());
+        for (Meeting m : meetingListFilter) {
             assertEquals(m.getRoom().toString(), placeFilter);
         }
     }
@@ -96,10 +97,11 @@ public class UnitTest {
         mMeetingRepository.addMeeting(m2);
         mMeetingRepository.addMeeting(m3);
 
-        List<Meeting> meetingList = mMeetingRepository.filterByDate(dateFilter);
+        List<Meeting> meetingList = mMeetingRepository.getMeetingsList();
+        List<Meeting> meetingListFilter = mMeetingRepository.filterByDate(dateFilter);
 
-        assertEquals(2, meetingList.size());
-        for (Meeting m : meetingList) {
+        assertEquals(3, meetingList.size());
+        for (Meeting m : meetingListFilter) {
             assertEquals(m.getDateFormated(), dateFilter);
         }
     }

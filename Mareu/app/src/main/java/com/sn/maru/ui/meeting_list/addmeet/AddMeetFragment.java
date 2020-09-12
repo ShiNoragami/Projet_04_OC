@@ -10,11 +10,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -34,6 +36,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static com.sn.maru.utilities.Utils.isEmailValid;
 
@@ -52,8 +55,6 @@ public class AddMeetFragment extends Fragment
     Button mContributorSelector;
     @BindView(R.id.add_save)
     Button mCreateMeetingBtn;
-    @BindView(R.id.add_return)
-    Button mCancelBtn;
     @BindView(R.id.list_contributor)
     TextView mContributorList;
     @BindView(R.id.date_btn)
@@ -81,14 +82,25 @@ public class AddMeetFragment extends Fragment
     private final int TAG_BUTTON_DATE = 4;
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mMeetingRepository = ((BaseActivity) requireActivity()).getMeetingRepository();
+        configureRoomSpinner();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_meet, container, false);
+        View view = inflater.inflate(R.layout.activity_add_meet, container, false);
         ButterKnife.bind(this, view);
-        mMeetingRepository = ((BaseActivity) getActivity()).getMeetingRepository();
         configureClickListener();
-        configureRoomSpinner();
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 
     private void configureClickListener() {
@@ -96,20 +108,20 @@ public class AddMeetFragment extends Fragment
         mContributorSelector.setTag(TAG_BUTTON_CONTRIBUTOR);
         mMeetingSelectTime.setOnClickListener(this);
         mMeetingSelectTime.setTag(TAG_BUTTON_TIME);
-        mCancelBtn.setOnClickListener(this);
-        mCancelBtn.setTag(TAG_BUTTON_CANCEL);
         mCreateMeetingBtn.setOnClickListener(this);
         mCreateMeetingBtn.setTag(TAG_BUTTON_CREATE);
         mDateSelectorBtn.setOnClickListener(this);
         mDateSelectorBtn.setTag(TAG_BUTTON_DATE);
     }
 
+    @OnClick(R.id.add_return)
+    public void navigateUp(View view){
+        requireActivity().finish();
+    }
+
     @Override
     public void onClick(View v) {
         switch ((int) v.getTag()) {
-            case TAG_BUTTON_CANCEL:
-                getActivity().finish();
-                break;
             case TAG_BUTTON_TIME:
                 showTimePikerDialog();
                 break;

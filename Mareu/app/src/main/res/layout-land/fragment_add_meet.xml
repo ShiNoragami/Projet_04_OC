@@ -9,8 +9,6 @@
     android:orientation="vertical"
     tools:context=".ui.meeting_list.addmeet.AddMeetActivity">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -13,10 +13,12 @@ import com.sn.maru.R;
 import com.sn.maru.ui.meeting_list.addmeet.AddMeetActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
-    public FloatingActionButton add_meeting_fab;
+    @BindView(R.id.add_meeting_fab)
+    FloatingActionButton add_meeting_fab;
     @BindView(R.id.activity_main_toolbar)
     Toolbar toolbar;
 
@@ -24,6 +26,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        ButterKnife.bind(this);
         configureFragment();
         configureToolbar();
         configureFABAddMeeting();
@@ -48,7 +51,6 @@ public class MainActivity extends BaseActivity {
      * SetUp the FloatingActionButton to start new AddMeetActivity
      */
     private void configureFABAddMeeting() {
-        add_meeting_fab =  add_meeting_fab.findViewById(R.id.add_meeting_fab);
         add_meeting_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

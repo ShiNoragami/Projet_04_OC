@@ -20,6 +20,7 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,11 +48,11 @@ public class AddMeetInstrumentedTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
-    @Before
+   /* @Before
     public void setup() {
         mMeetingRepository = new MeetingRepository(new DummyMeetingApiService());
         ITEM_COUNT = mMeetingRepository.getMeetingsList().size();
-    }
+    }*/
 
     @Test
     public void addMeetingInstrumentedTest() {
@@ -137,7 +138,7 @@ public class AddMeetInstrumentedTest {
                                         0),
                                 0),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("toto@lamzon.com"), closeSoftKeyboard());
+        appCompatEditText2.perform(replaceText("peach@lamzon.com"), closeSoftKeyboard());
 
         //validate the choice
         ViewInteraction appCompatButton6 = onView(
@@ -160,7 +161,7 @@ public class AddMeetInstrumentedTest {
         appCompatButton7.perform(scrollTo(), click());
 
         //check if the meeting is add in recycler view
-        onView(ViewMatchers.withId(R.id.meeting_recycler_view)).check(withItemCount(ITEM_COUNT + 1));
+        onView(ViewMatchers.withId(R.id.meeting_recycler_view)).check(withItemCount(1));
     }
 
     public static Matcher<View> childAtPosition(
