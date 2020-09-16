@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sn.maru.model.Meeting;
 import com.sn.maru.R;
+import com.sn.maru.model.Meeting;
 
 import java.util.List;
 

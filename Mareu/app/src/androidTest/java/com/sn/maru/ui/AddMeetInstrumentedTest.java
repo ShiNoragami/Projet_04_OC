@@ -1,26 +1,16 @@
 package com.sn.maru.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-
-import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
-import com.sn.maru.service.DummyMeetingApiService;
-import com.sn.maru.service.MeetingApiService;
 import com.sn.maru.R;
 import com.sn.maru.repository.MeetingRepository;
+import com.sn.maru.service.DummyMeetingApiService;
 import com.sn.maru.ui.meeting_list.mainactivity.MainActivity;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,13 +20,8 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.sn.maru.utils.RecyclerViewItemCountAssertion.withItemCount;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -67,7 +52,7 @@ public class AddMeetInstrumentedTest {
         onView(withId(R.id.date_selector_btn)).perform(click());
 
         //validate the date selected
-        onView(withId(android.R.id.button1)).perform(scrollTo(),click());
+        onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         //select time of meeting
         onView(withId(R.id.time_selector_btn)).perform(click());
@@ -76,7 +61,7 @@ public class AddMeetInstrumentedTest {
         onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         //Open the dialog to add one email adress of contributor
-        onView(withId(R.id.contributor_selector_btn)).perform(scrollTo(),click());
+        onView(withId(R.id.contributor_selector_btn)).perform(scrollTo(), click());
 
         //add the email adress in edit text
         onView(withId(R.id.contributor_edit_txt)).perform(replaceText("peach@lamzon.com"), closeSoftKeyboard());
@@ -85,7 +70,7 @@ public class AddMeetInstrumentedTest {
         onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         //create the meeting on click on create button
-        onView(withId(R.id.add_save)).perform(scrollTo(),click());
+        onView(withId(R.id.add_save)).perform(scrollTo(), click());
 
         //check if the meeting is add in recycler view
         onView(ViewMatchers.withId(R.id.meeting_recycler_view)).check(withItemCount(1));

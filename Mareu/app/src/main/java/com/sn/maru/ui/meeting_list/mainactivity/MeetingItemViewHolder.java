@@ -7,8 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sn.maru.model.Meeting;
 import com.sn.maru.R;
+import com.sn.maru.model.Meeting;
 import com.sn.maru.utilities.DeleteEvent;
 
 import org.greenrobot.eventbus.EventBus;

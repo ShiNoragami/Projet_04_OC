@@ -2,8 +2,8 @@ package com.sn.maru.ui.meeting_list.addmeet;
 
 import android.os.Bundle;
 
-import com.sn.maru.base.BaseActivity;
 import com.sn.maru.R;
+import com.sn.maru.base.BaseActivity;
 
 public class AddMeetActivity extends BaseActivity {
 

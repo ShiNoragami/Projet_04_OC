@@ -1,7 +1,6 @@
 package com.sn.maru.ui.meeting_list.mainactivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -12,19 +11,17 @@ import android.widget.Spinner;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.sn.maru.base.BaseActivity;
 import com.sn.maru.R;
+import com.sn.maru.base.BaseActivity;
 import com.sn.maru.model.Room;
 import com.sn.maru.repository.MeetingRepository;
 import com.sn.maru.utilities.DeleteEvent;
 import com.sn.maru.utilities.DialogDatePickerFragment;
 import com.sn.maru.utilities.DialogPlaceSpinner;
-import com.sn.maru.utilities.DialogTimePickerFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -34,7 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MeetFragment extends Fragment implements DialogDatePickerFragment.DialogDatePickerListener,
-        DialogPlaceSpinner.DialogPlaceSpinnerListener{
+        DialogPlaceSpinner.DialogPlaceSpinnerListener {
 
     private MeetingRepository mMeetingRepository;
     private RecyclerView mRecyclerView;
@@ -80,7 +77,7 @@ public class MeetFragment extends Fragment implements DialogDatePickerFragment.D
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.filter_by_date_item:
                 showDatePikerDialog();
                 return true;
@@ -93,14 +90,14 @@ public class MeetFragment extends Fragment implements DialogDatePickerFragment.D
     }
 
     @SuppressLint("RestrictedApi")
-    private void filterListByDate(String dateString){
+    private void filterListByDate(String dateString) {
         adapter.updateList(mMeetingRepository.filterByDate(dateString));
         mRecyclerView.setAdapter(adapter);
         restoreDataFab.setVisibility(View.VISIBLE);
     }
 
     @SuppressLint("RestrictedApi")
-    private void filterListByPlace(String place){
+    private void filterListByPlace(String place) {
         adapter.updateList(mMeetingRepository.filterByPlace(place));
         mRecyclerView.setAdapter(adapter);
         restoreDataFab.setVisibility(View.VISIBLE);
@@ -125,21 +122,21 @@ public class MeetFragment extends Fragment implements DialogDatePickerFragment.D
     }
 
     @Subscribe
-    public void onDeleteMeeting(DeleteEvent event){
+    public void onDeleteMeeting(DeleteEvent event) {
         mMeetingRepository.deleteMeeting(event.mMeeting);
         initList();
     }
 
     private void showDatePikerDialog() {
         DialogDatePickerFragment dialog = new DialogDatePickerFragment();
-        dialog.setTargetFragment(MeetFragment.this,5);
-        dialog.show(getFragmentManager(),"DialogDatePickerFragment");
+        dialog.setTargetFragment(MeetFragment.this, 5);
+        dialog.show(getFragmentManager(), "DialogDatePickerFragment");
     }
 
     private void showSpinnerPlaceDialog() {
         DialogPlaceSpinner dialog = new DialogPlaceSpinner();
-        dialog.setTargetFragment(MeetFragment.this,6);
-        dialog.show(getFragmentManager(),"DialogSpinnerPlaceFragment");
+        dialog.setTargetFragment(MeetFragment.this, 6);
+        dialog.show(getFragmentManager(), "DialogSpinnerPlaceFragment");
     }
 
     @Override
@@ -149,7 +146,7 @@ public class MeetFragment extends Fragment implements DialogDatePickerFragment.D
         int mMonth = datePicker.getMonth();
         int mYear = datePicker.getYear();
         Calendar calendar = Calendar.getInstance();
-        calendar.set(mYear,mMonth,mDay);
+        calendar.set(mYear, mMonth, mDay);
         Date date = calendar.getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String dateString = sdf.format(date);

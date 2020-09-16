@@ -1,8 +1,8 @@
 package com.sn.maru.service;
 
+import com.sn.maru.R;
 import com.sn.maru.model.Meeting;
 import com.sn.maru.model.Room;
-import com.sn.maru.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

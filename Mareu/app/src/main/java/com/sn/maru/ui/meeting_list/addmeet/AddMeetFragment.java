@@ -114,7 +114,7 @@ public class AddMeetFragment extends Fragment
     }
 
     @OnClick(R.id.add_return)
-    public void navigateUp(View view){
+    public void navigateUp(View view) {
         requireActivity().finish();
     }
 

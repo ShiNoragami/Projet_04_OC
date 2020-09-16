@@ -3,7 +3,6 @@ package com.sn.maru;
 import com.sn.maru.model.Meeting;
 import com.sn.maru.repository.MeetingRepository;
 import com.sn.maru.service.DummyMeetingApiService;
-import com.sn.maru.service.MeetingApiService;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +13,9 @@ import java.util.List;
 
 import static com.sn.maru.service.DummyMeetingGenerator.MAILS;
 import static com.sn.maru.service.DummyMeetingGenerator.ROOM_LIST;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class UnitTest {
 

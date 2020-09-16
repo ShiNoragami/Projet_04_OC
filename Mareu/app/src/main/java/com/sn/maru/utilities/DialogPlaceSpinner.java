@@ -24,7 +24,7 @@ import static com.sn.maru.service.DummyMeetingGenerator.ROOM_LIST;
 
 public class DialogPlaceSpinner extends DialogFragment {
 
-    public interface DialogPlaceSpinnerListener{
+    public interface DialogPlaceSpinnerListener {
         public void onDialogPlaceSpinnerValidateClick(DialogFragment dialog);
     }
 
@@ -35,7 +35,7 @@ public class DialogPlaceSpinner extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = requireActivity().getLayoutInflater();
-        View v = inflater.inflate(R.layout.dialog_place_spinner,null);
+        View v = inflater.inflate(R.layout.dialog_place_spinner, null);
         builder.setView(v)
                 .setMessage("Lieu de réunion")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
@@ -54,12 +54,13 @@ public class DialogPlaceSpinner extends DialogFragment {
         Spinner listRooms = (Spinner) v.findViewById(R.id.dialog_room_spinner_sp);
         List<Room> rooms = ROOM_LIST;
         listRooms.setAdapter(new ArrayAdapter<Room>(getContext()
-                ,android.R.layout.simple_spinner_dropdown_item, rooms));
+                , android.R.layout.simple_spinner_dropdown_item, rooms));
         listRooms.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Room selectedRoom = (Room) listRooms.getSelectedItem();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -71,10 +72,10 @@ public class DialogPlaceSpinner extends DialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        try{
+        try {
             mListener = (DialogPlaceSpinnerListener) getTargetFragment();
-        }catch (ClassCastException e){
-            throw new ClassCastException(getActivity().toString()+" must implement DialogTimePickerListener");
+        } catch (ClassCastException e) {
+            throw new ClassCastException(getActivity().toString() + " must implement DialogTimePickerListener");
         }
     }
 }
