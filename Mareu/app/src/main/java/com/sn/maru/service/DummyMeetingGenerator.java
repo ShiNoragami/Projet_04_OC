@@ -1,6 +1,5 @@
 package com.sn.maru.service;
 
-import com.sn.maru.R;
 import com.sn.maru.model.Meeting;
 import com.sn.maru.model.Room;
 
@@ -12,16 +11,16 @@ import java.util.List;
 
 public abstract class DummyMeetingGenerator {
     public static List<Room> ROOM_LIST = Arrays.asList(
-            new Room("Salle 1", R.color.colorPrimary),
-            new Room("Salle 2", R.color.colorPrimaryDark),
-            new Room("Salle 3", R.color.colorPrimary),
-            new Room("Salle 4", R.color.colorPrimaryDark),
-            new Room("Salle 5", R.color.colorPrimary),
-            new Room("Salle 6", R.color.colorPrimaryDark),
-            new Room("Salle 7", R.color.colorPrimary),
-            new Room("Salle 8", R.color.colorPrimaryDark),
-            new Room("Salle 9", R.color.colorPrimary),
-            new Room("Salle 10", R.color.colorPrimaryDark)
+            new Room("Salle 1", "#40a8db"),
+            new Room("Salle 2", "#97ebdb"),
+            new Room("Salle 3", "#40a8db"),
+            new Room("Salle 4", "#97ebdb"),
+            new Room("Salle 5", "#40a8db"),
+            new Room("Salle 6", "#97ebdb"),
+            new Room("Salle 7", "#40a8db"),
+            new Room("Salle 8", "#97ebdb"),
+            new Room("Salle 9", "#40a8db"),
+            new Room("Salle 10", "#97ebdb")
     );
 
     public static List<Meeting> MEETINGS = Arrays.asList();

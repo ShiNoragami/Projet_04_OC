@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/meetingItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,12 +13,12 @@
         android:layout_marginStart="@dimen/pastil_margin_start"
         android:layout_marginTop="@dimen/pastil_margin_top"
         android:layout_marginBottom="@dimen/pastil_margin_bottom"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/item_list_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_pastil_24dp" />
+        app:srcCompat="@drawable/ic_pastil_24dp"
+        app:tint="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/item_list_title"

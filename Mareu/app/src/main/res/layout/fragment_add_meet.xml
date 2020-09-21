@@ -28,7 +28,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/add_margin"
             android:text="@string/add_title"
-            android:textSize="@dimen/title_size" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_size"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_nameLyt"
@@ -49,12 +50,11 @@
             android:id="@+id/meeting_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
             android:padding="@dimen/text_view_padding_land"
             android:text="@string/infoAddDateTimeToMeeting"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_size_land"
-            android:textStyle="bold" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,23 +67,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/add_margin"
-                android:backgroundTint="@android:color/darker_gray"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:padding="@dimen/add_margin"
                 android:text="@string/date"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/text_size" />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size"
+                />
 
             <Button
                 android:id="@+id/time_selector_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/add_margin"
-                android:backgroundTint="@android:color/darker_gray"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:padding="@dimen/add_margin"
                 android:text="@string/time"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/text_size" />
         </LinearLayout>
 
@@ -92,13 +93,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/add_margin"
+            android:textAlignment="center"
             android:text="@string/room"
-            android:textSize="@dimen/title_size" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_size"/>
 
         <Spinner
             android:id="@+id/roomSpinner_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_marginStart="@dimen/add_margin"
             android:layout_marginEnd="@dimen/add_margin" />
 
@@ -108,18 +112,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/add_margin"
             android:text="@string/contributor"
-            android:textSize="@dimen/title_size" />
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_size"/>
 
         <Button
             android:id="@+id/contributor_selector_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/add_margin"
-            android:backgroundTint="@android:color/darker_gray"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:clickable="true"
             android:text="@string/select_contributor"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size" />
 
         <TextView
@@ -138,10 +144,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/add_margin"
-            android:backgroundTint="@android:color/darker_gray"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/save"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_size" />
     </LinearLayout>
 </ScrollView>

@@ -99,7 +99,6 @@ public class AddMeetFragment extends Fragment
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
     private void configureClickListener() {

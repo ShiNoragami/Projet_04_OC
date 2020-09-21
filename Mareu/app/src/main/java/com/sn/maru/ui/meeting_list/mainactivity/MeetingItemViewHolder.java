@@ -1,5 +1,6 @@
 package com.sn.maru.ui.meeting_list.mainactivity;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class MeetingItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void update(Meeting meeting) {
-        this.color.getDrawable().setTint(meeting.getRoom().getColor());
+        this.color.getDrawable().setTint(Color.parseColor(meeting.getRoom().getColor()));
         this.meet.setText(meeting.getName() + " - " + meeting.getRoom() + " - " +
                 meeting.getTimeFormated() + "\n" + meeting.getDateFormated());
 
