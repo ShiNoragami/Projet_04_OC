@@ -18,7 +18,7 @@ Projet validé
 
 ## Installation
 
-Depuis l'adresse Github https://github.com/ShiNoragami/Projet_03_OC. Et cliquez sur le boutton clone or download.
+Depuis l'adresse Github https://github.com/ShiNoragami/Projet_04_OC. Et cliquez sur le boutton clone or download.
 Pour ouvrir, compiler puis executer l'application, télécharger Android Studio à l'adresse suivante : https://developer.android.com/studio .
 
 ## Lancement de l'application
